@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <style>
+    .graded {
+      padding-top: 5pt;
+      margin-right: 10pt;
+      margin-left: 10pt;
+      background-image: linear-gradient(to right, rgba(210,0,0,.5), rgba(255,255,255,0), rgba(35,200,0,.5));
+      border-radius: 5px;
+    }
+    .text_container {
+      border-radius: 5px;
+      border: 4px solid #ccc;
+      padding: 5px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script type="text/javascript">
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.classList.remove('was-validated');
+            form.classList.add('needs-validation');
+          });
+        }, false);
+      })();
+  </script>
+  
+  <script type="text/javascript">
+      // Disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+  </script>
+
+</head>
+<body>
+  <form class="needs-validation" name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit' novalidate>
+    <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+
+    <input type='hidden' value='${discussionId1a}' name='discussionId1a' id='discussionId1a'/>
+    <input type='hidden' value='${argumentId1a}' name='argumentId1a' id='argumentId1a'/>
+    <input type='hidden' value='${discussionId1b}' name='discussionId1b' id='discussionId1b'/>
+    <input type='hidden' value='${argumentId1b}' name='argumentId1b' id='argumentId1b'/>
+
+    <input type='hidden' value='${discussionId2a}' name='discussionId2a' id='discussionId2a'/>
+    <input type='hidden' value='${argumentId2a}' name='argumentId2a' id='argumentId2a'/>
+    <input type='hidden' value='${discussionId2b}' name='discussionId2b' id='discussionId2b'/>
+    <input type='hidden' value='${argumentId2b}' name='argumentId2b' id='argumentId2b'/>
+
+    <input type='hidden' value='${discussionId3a}' name='discussionId3a' id='discussionId3a'/>
+    <input type='hidden' value='${argumentId3a}' name='argumentId3a' id='argumentId3a'/>
+    <input type='hidden' value='${discussionId3b}' name='discussionId3b' id='discussionId3b'/>
+    <input type='hidden' value='${argumentId3b}' name='argumentId3b' id='argumentId3b'/>
+
+    <input type='hidden' value='${discussionId4a}' name='discussionId4a' id='discussionId4a'/>
+    <input type='hidden' value='${argumentId4a}' name='argumentId4a' id='argumentId4a'/>
+    <input type='hidden' value='${discussionId4b}' name='discussionId4b' id='discussionId4b'/>
+    <input type='hidden' value='${argumentId4b}' name='argumentId4b' id='argumentId4b'/>
+
+    <input type='hidden' value='${discussionId5a}' name='discussionId5a' id='discussionId5a'/>
+    <input type='hidden' value='${argumentId5a}' name='argumentId5a' id='argumentId5a'/>
+    <input type='hidden' value='${discussionId5b}' name='discussionId5b' id='discussionId5b'/>
+    <input type='hidden' value='${argumentId5b}' name='argumentId5b' id='argumentId5b'/>
+
+    <div class="container">
+      <!-- Task Description -->
+      <div class="row">
+        <div class="col">
+          <fieldset>
+            <!-- Form Name -->
+            <legend>Task</legend>
+            <p> Given below are 5 pairs of text. </p>
+            <p> For each pair, read both texts carefully and decide </p>
+              <ul>
+                <li>Which text has the better style of speech? <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Show Example</a>
+                  <div class="collapse" id="collapseExample">
+                    <div class="container">
+                      <hr>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <p>A text of high rhetorical quality uses correct language, is well written and not vague.</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Example</h5>
+                              <h6 class="card-subtitle mb-2 text-success">This is a good style of speech</h6>
+                              <p class="card-text">"'Gender' is an idea that is based on what we socially believe. Am I a woman because when I was a kid my female mother wanted me to play with dolls and not GI Joes? Of course, these social cues are what mainly divides men from women. Anthropologists that have studied cultures around the world know that a lot of the traditional gender roles we see in the west are just products of culture and not necessarily innate."</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Example</h5>
+                                <h6 class="card-subtitle mb-2 text-danger">This is a bad style of speech </h6>
+                                <p class="card-text">"Gender is a social construct cuse we are told when we are first born by a dude what gender but if he didnt tell us that we woudnt have a gender its only cuse he told us that gender that we are that gender."</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div></li>
+              </ul>
+            </p>
+          </fieldset>
+          <hr>
+        </div>
+      </div>
+
+      <!-- Pair 1 -->
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+            <fieldset>
+              <legend></legend>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Text A</h5>
+                        <p>${argument1a}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Text B</h5>
+                        <p>${argument1b}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Question -->
+              <div class="form-group">
+                <label class="col control-label" for="is-argument"><strong>Which text is better?</strong></label>
+                <div class="form-row">
+                  <div class="col text-center align-middle">
+                    <input class="form-check-input" type="radio" name="comparison_1" id="argument_1_a" value="A" required>
+                    <label class="radio-inline form-check-label" for="argument_1_a">Text A</label> 
+                  </div>
+                   <div class="col text-center align-middle">
+                    <input class="form-check-input" type="radio" name="comparison_1" id="argument_1_b" value="B" required>
+                    <label class="radio-inline form-check-label" for="argument_1_b">Text B</label> 
+                  </div>
+                   <div class="col text-center align-middle">
+                    <input class="form-check-input" type="radio" name="comparison_1" id="argument_1_c" value="Tie" required>
+                    <label class="radio-inline form-check-label" for="argument_1_c">Both are equally good</label> 
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pair 2 -->
+      <hr>
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+          <fieldset>
+            <legend></legend>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text A</h5>
+                      <p>${argument2a}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text B</h5>
+                      <p>${argument2b}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Question -->
+            <div class="form-group">
+              <label class="col control-label" for="is-argument"><strong>Which text is better?</strong></label>
+              <div class="form-row">
+                <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_2" id="argument_2_a" value="A" required>
+                  <label class="radio-inline form-check-label" for="argument_2_a">Text A</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_2" id="argument_2_b" value="B" required>
+                  <label class="radio-inline form-check-label" for="argument_2_b">Text B</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_2" id="argument_2_c" value="Tie" required>
+                  <label class="radio-inline form-check-label" for="argument_2_c">Both are equally good</label> 
+                </div>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pair 3 -->
+      <hr>
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+          <fieldset>
+            <legend></legend>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text A</h5>
+                      <p>${argument3a}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text B</h5>
+                      <p>${argument3b}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Question -->
+            <div class="form-group">
+              <label class="col control-label" for="is-argument"><strong>Which text is better?</strong></label>
+              <div class="form-row">
+                <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_3" id="argument_3_a" value="A" required>
+                  <label class="radio-inline form-check-label" for="argument_3_a">Text A</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_3" id="argument_3_b" value="B" required>
+                  <label class="radio-inline form-check-label" for="argument_3_b">Text B</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_3" id="argument_3_c" value="Tie" required>
+                  <label class="radio-inline form-check-label" for="argument_3_c">Both are equally good</label> 
+                </div>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pair 4 -->
+      <hr>
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+          <fieldset>
+            <legend></legend>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text A</h5>
+                      <p>${argument4a}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text B</h5>
+                      <p>${argument4b}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Question -->
+            <div class="form-group">
+              <label class="col control-label" for="is-argument"><strong>Which text is better?</strong></label>
+              <div class="form-row">
+                <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_4" id="argument_4_a" value="A" required>
+                  <label class="radio-inline form-check-label" for="argument_4_a">Text A</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_4" id="argument_4_b" value="B" required>
+                  <label class="radio-inline form-check-label" for="argument_4_b">Text B</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_4" id="argument_4_c" value="Tie" required>
+                  <label class="radio-inline form-check-label" for="argument_4_c">Both are equally good</label> 
+                </div>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pair 5 -->
+      <hr>
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+          <fieldset>
+            <legend></legend>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text A</h5>
+                      <p>${argument5a}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Text B</h5>
+                      <p>${argument5b}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Question -->
+            <div class="form-group">
+              <label class="col control-label" for="is-argument"><strong>Which text is better?</strong></label>
+              <div class="form-row">
+                <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_5" id="argument_5_a" value="A" required>
+                  <label class="radio-inline form-check-label" for="argument_5_a">Text A</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_5" id="argument_5_b" value="B" required>
+                  <label class="radio-inline form-check-label" for="argument_5_b">Text B</label> 
+                </div>
+                 <div class="col text-center align-middle">
+                  <input class="form-check-input" type="radio" name="comparison_5" id="argument_5_c" value="Tie" required>
+                  <label class="radio-inline form-check-label" for="argument_5_c">Both are equally good</label> 
+                </div>
+              </div>
+            </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">   
+        <fieldset>
+          <!-- Textarea -->
+          <div class="form-group">
+            <label class="col control-label" for="textarea"><strong>Optional Comment</strong></label>
+            <div class="col">                     
+              <textarea class="form-control" id="textarea" name="comment"></textarea>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group">
+            <div class="col">
+              <p><input class="btn btn-lg btn-primary" type='submit' id='submitButton' value='Submit' /><br><small> Submissions will be reviewed </small></p>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </form>
+  <script language='Javascript'>turkSetAssignmentID();</script>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <style>
+    .graded {
+      padding-top: 5pt;
+      margin-right: 10pt;
+      margin-left: 10pt;
+      background-image: linear-gradient(to right, rgba(210,0,0,.5), rgba(255,255,255,0), rgba(35,200,0,.5));
+      border-radius: 5px;
+      padding-bottom:5pt;
+    }
+    .text_container {
+      border-radius: 5px;
+      border: 4px solid #ccc;
+      padding: 5px;
+      margin-top:10px;
+    }
+  </style>
+  <script type="text/javascript">
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.classList.remove('was-validated');
+            form.classList.add('needs-validation');
+          });
+        }, false);
+      })();
+  </script>
+  
+  <script type="text/javascript">
+      // Disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+  </script>
+</head>
+<body>
+  <form class="needs-validation" name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit' novalidate>
+    <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+    <input type='hidden' value='${discussionId_1}' name='discussionId_1' id='discussionId_1'/>
+    <input type='hidden' value='${argumentId_1}' name='argumentId_1' id='argumentId_1'/>
+    <input type='hidden' value='${discussionId_2}' name='discussionId_2' id='discussionId_2'/>
+    <input type='hidden' value='${argumentId_2}' name='argumentId_2' id='argumentId_2'/>
+    <input type='hidden' value='${discussionId_3}' name='discussionId_3' id='discussionId_3'/>
+    <input type='hidden' value='${argumentId_3}' name='argumentId_3' id='argumentId_3'/>
+    <input type='hidden' value='${discussionId_4}' name='discussionId_4' id='discussionId_4'/>
+    <input type='hidden' value='${argumentId_4}' name='argumentId_4' id='argumentId_4'/>
+    <input type='hidden' value='${discussionId_5}' name='discussionId_5' id='discussionId_4'/>
+    <input type='hidden' value='${argumentId_5}' name='argumentId_5' id='argumentId_4'/>
+
+    <div class="container">
+      <!-- Task Description -->
+      <div class="row">
+        <div class="col">
+          <fieldset>
+            <!-- Form Name -->
+            <legend>Instructions</legend>
+            <p> Given below are a question and a 5 spans of text. </p>
+            <p> Read carefully and decide for each text:
+              <ul>
+                <li>Is the text argumentative?</li>
+                <li>How well does the text fit the question?</li>
+              </ul>
+            </p>
+            <p> A text is argumentative if it contains at least one argument. An argument is defined as a justified claim. <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Show Example</a>
+                  <div class="collapse" id="collapseExample">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">Example</h5>
+                              <h6 class="card-subtitle mb-2 text-success">This is an argument</h6>
+                              <p class="card-text">"The death penalty should be abolished as there is no evidence that it prevents crime. For comparison, look at the crime rates in the United States compared to Europe, which has abolished it."</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Example</h5>
+                                <h6 class="card-subtitle mb-2 text-danger">This is not an argument</h6>
+                                <p class="card-text">"I believe that the death penalty should not be abolished and should be continued."</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </p>
+          </fieldset>
+          <hr>
+        </div>
+      </div>
+
+      <!-- Topic -->
+      <div class="row">
+        <div class="col">
+          <fieldset>
+            <legend>Question</legend>
+            <div class="form-group">
+              <p>${topic}</p>
+            </div>
+          </fieldset>
+          <hr>
+        </div>
+      </div>
+
+      <!-- Text 1 -->
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+            <!-- Text -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend>Text 1</legend>
+                  <p>${text_1}</p>
+                </fieldset>
+                <hr>
+              </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend></legend>
+
+                  <!-- Argument Classification Yes/No -->
+                  <div class="form-group">
+                    <label class="col control-label" for="is_argument_1"><strong>Is the text argumentative?</strong></label>
+                    <div class="form-row">
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_1" id="is_argument_1_yes" value="True" required>
+                          <label class="radio-inline form-check-label" for="is_argument_1_yes">Yes</label> 
+                        </div> 
+                      </div>
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_1" id="is_argument_1_no" value="False" required>
+                          <label class="radio-inline form-check-label" for="is_argument_1_no">No</label> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Argument Relevance 1-5 -->
+                  <div class="form-group">
+                    <label class="col control-label" for="relevance_1"><strong>How well does the text fit the question?</strong></label>
+                    <div class="form-row graded">
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_1" id="relevance_1_1" value="0" required>
+                        <label class="radio-inline form-check-label" for="relevance_1_1"><small>Not at all</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_1" id="relevance_1_2" value="1" required>
+                        <label class="radio-inline form-check-label" for="relevance_1_2"><small>Low</small></label>
+                      </div>
+                      <div class="col text-center">               
+                        <input class="form-check-input" type="radio" name="relevance_1" id="relevance_1_3" value="2" required>
+                        <label class="radio-inline form-check-label" for="relevance_1_3"><small>Moderate</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_1" id="relevance_1_4" value="3" required>  
+                        <label class="radio-inline form-check-label" for="relevance_1_4"><small>High</small></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Text 2 -->
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+            <!-- Text -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend>Text 2</legend>
+                  <p>${text_2}</p>
+                </fieldset>
+                <hr>
+              </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend></legend>
+
+                  <!-- Argument Classification Yes/No -->
+                  <div class="form-group">
+                    <label class="col control-label" for="is_argument_2"><strong>Is the text argumentative?</strong></label>
+                    <div class="form-row">
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_2" id="is_argument_2_yes" value="True" required>
+                          <label class="radio-inline form-check-label" for="is_argument_2_yes">Yes</label> 
+                        </div> 
+                      </div>
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_2" id="is_argument_2_no" value="False" required>
+                          <label class="radio-inline form-check-label" for="is_argument_2_no">No</label> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Argument Relevance 1-5 -->
+                  <div class="form-group">
+                    <label class="col control-label" for="relevance_2"><strong>How well does the text fit the question?</strong></label>
+                    <div class="form-row graded">
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_2" id="relevance_2_1" value="0" required>
+                        <label class="radio-inline form-check-label" for="relevance_2_1"><small>Not at all</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_2" id="relevance_2_2" value="1" required>
+                        <label class="radio-inline form-check-label" for="relevance_2_2"><small>Low</small></label>
+                      </div>
+                      <div class="col text-center">               
+                        <input class="form-check-input" type="radio" name="relevance_2" id="relevance_2_3" value="2" required>
+                        <label class="radio-inline form-check-label" for="relevance_2_3"><small>Moderate</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_2" id="relevance_2_4" value="3" required>  
+                        <label class="radio-inline form-check-label" for="relevance_2_4"><small>High</small></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Text 3 -->
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+            <!-- Text -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend>Text 3</legend>
+                  <p>${text_3}</p>
+                </fieldset>
+                <hr>
+              </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend></legend>
+
+                  <!-- Argument Classification Yes/No -->
+                  <div class="form-group">
+                    <label class="col control-label" for="is_argument_3"><strong>Is the text argumentative?</strong></label>
+                    <div class="form-row">
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_3" id="is_argument_3_yes" value="True" required>
+                          <label class="radio-inline form-check-label" for="is_argument_3_yes">Yes</label> 
+                        </div> 
+                      </div>
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_3" id="is_argument_3_no" value="False" required>
+                          <label class="radio-inline form-check-label" for="is_argument_3_no">No</label> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Argument Relevance 1-5 -->
+                  <div class="form-group">
+                    <label class="col control-label" for="relevance_3"><strong>How well does the text fit the question?</strong></label>
+                    <div class="form-row graded">
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_3" id="relevance_3_1" value="0" required>
+                        <label class="radio-inline form-check-label" for="relevance_3_1"><small>Not at all</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_3" id="relevance_3_2" value="1" required>
+                        <label class="radio-inline form-check-label" for="relevance_3_2"><small>Low</small></label>
+                      </div>
+                      <div class="col text-center">               
+                        <input class="form-check-input" type="radio" name="relevance_3" id="relevance_3_3" value="2" required>
+                        <label class="radio-inline form-check-label" for="relevance_3_3"><small>Moderate</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_3" id="relevance_3_4" value="3" required>  
+                        <label class="radio-inline form-check-label" for="relevance_3_4"><small>High</small></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Text 4 -->
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+            <!-- Text -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend>Text 4</legend>
+                  <p>${text_4}</p>
+                </fieldset>
+                <hr>
+              </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend></legend>
+
+                  <!-- Argument Classification Yes/No -->
+                  <div class="form-group">
+                    <label class="col control-label" for="is_argument_4"><strong>Is the text argumentative?</strong></label>
+                    <div class="form-row">
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_4" id="is_argument_4_yes" value="True" required>
+                          <label class="radio-inline form-check-label" for="is_argument_4_yes">Yes</label> 
+                        </div> 
+                      </div>
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_4" id="is_argument_4_no" value="False" required>
+                          <label class="radio-inline form-check-label" for="is_argument_4_no">No</label> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Argument Relevance 1-5 -->
+                  <div class="form-group">
+                    <label class="col control-label" for="relevance_4"><strong>How well does the text fit the question?</strong></label>
+                    <div class="form-row graded">
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_4" id="relevance_4_1" value="0" required>
+                        <label class="radio-inline form-check-label" for="relevance_4_1"><small>Not at all</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_4" id="relevance_4_2" value="1" required>
+                        <label class="radio-inline form-check-label" for="relevance_4_2"><small>Low</small></label>
+                      </div>
+                      <div class="col text-center">               
+                        <input class="form-check-input" type="radio" name="relevance_4" id="relevance_4_3" value="2" required>
+                        <label class="radio-inline form-check-label" for="relevance_4_3"><small>Moderate</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_4" id="relevance_4_4" value="3" required>  
+                        <label class="radio-inline form-check-label" for="relevance_4_4"><small>High</small></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Text 5 -->
+      <div class="text_container">
+        <div class="row">
+          <div class="col">
+            <!-- Text -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend>Text 5</legend>
+                  <p>${text_5}</p>
+                </fieldset>
+                <hr>
+              </div>
+            </div>
+
+            <!-- Questions -->
+            <div class="row">
+              <div class="col">
+                <fieldset>
+                  <legend></legend>
+
+                  <!-- Argument Classification Yes/No -->
+                  <div class="form-group">
+                    <label class="col control-label" for="is_argument_5"><strong>Is the text argumentative?</strong></label>
+                    <div class="form-row">
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_5" id="is_argument_5_yes" value="True" required>
+                          <label class="radio-inline form-check-label" for="is_argument_5_yes">Yes</label> 
+                        </div> 
+                      </div>
+                      <div class="col text-center">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="is_argument_5" id="is_argument_5_no" value="False" required>
+                          <label class="radio-inline form-check-label" for="is_argument_5_no">No</label> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Argument Relevance 1-5 -->
+                  <div class="form-group">
+                    <label class="col control-label" for="relevance_5"><strong>How well does the text fit the question?</strong></label>
+                    <div class="form-row graded">
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_5" id="relevance_5_1" value="0" required>
+                        <label class="radio-inline form-check-label" for="relevance_5_1"><small>Not at all</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_5" id="relevance_5_2" value="1" required>
+                        <label class="radio-inline form-check-label" for="relevance_5_2"><small>Low</small></label>
+                      </div>
+                      <div class="col text-center">               
+                        <input class="form-check-input" type="radio" name="relevance_5" id="relevance_5_3" value="2" required>
+                        <label class="radio-inline form-check-label" for="relevance_5_3"><small>Moderate</small></label> 
+                      </div>
+                      <div class="col text-center align-middle">
+                        <input class="form-check-input" type="radio" name="relevance_5" id="relevance_5_4" value="3" required>  
+                        <label class="radio-inline form-check-label" for="relevance_5_4"><small>High</small></label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Submit -->
+      <div class="row">
+        <div class="col">
+          <fieldset>
+            <legend></legend>
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col control-label" for="textarea"><strong>Optional Comment</strong></label>
+              <div class="col">                     
+                <textarea class="form-control" id="textarea" name="comment"></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+              <div class="col">
+                <p><input class="btn btn-lg btn-primary" type='submit' id='submitButton' value='Submit' /><br><small> Submissions will be reviewed </small></p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script language='Javascript'>turkSetAssignmentID();</script>
+</body>
+</html>
